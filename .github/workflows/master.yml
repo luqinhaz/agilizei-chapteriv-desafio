@@ -7,7 +7,7 @@ name: Configuração e Execução dos Testes
 #Acionamento por EVENTO
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 
 jobs:
   build:

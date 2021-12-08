@@ -16,8 +16,8 @@ describe('Realziar o cadastro de novo usuário', () => {
         //Realizando o cadastro
         cy.get('input#email_create').type(chance.email())
         cy.get('#SubmitCreate').click()
-        cy.get('.page-heading')
-            .should('contain', 'CREATE AN ACCOUNT')
+        
+        cy.get('.page-heading').contains('CREATE AN ACCOUNT')
 
         cy.get('input#id_gender2').click()
 

@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2021-12-08T00:45:29.728Z",
-    "end": "2021-12-08T00:45:57.823Z",
-    "duration": 28095,
+    "failures": 0,
+    "start": "2021-12-08T02:17:12.894Z",
+    "end": "2021-12-08T02:17:30.116Z",
+    "duration": 17222,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "ec2a236d-e684-4213-a06d-23a2eeec518d",
+      "uuid": "1583a914-273d-4d78-8201-bfffa3556f18",
       "title": "",
       "fullFile": "cypress/integration/cadastro.spec.js",
       "file": "cypress/integration/cadastro.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "8725eb00-2fcf-4b11-855d-394d42beff62",
+          "uuid": "a2a6f2b7-80fc-477f-aabb-59a7c57f3dac",
           "title": "Realziar o cadastro de novo usuário",
           "fullFile": "",
           "file": "",
@@ -38,33 +38,29 @@
               "title": "Quando eu preencher todos os dados obrigatórios, então devo ser cadastrado no sistema.",
               "fullTitle": "Realziar o cadastro de novo usuário Quando eu preencher todos os dados obrigatórios, então devo ser cadastrado no sistema.",
               "timedOut": null,
-              "duration": 27956,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 17100,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
               "code": "//Realizando o acesso ao site\ncy.visit('/', {\n  timeout: 30000\n}).title().should('eq', 'My Store'); //Clicando no botão de Sign In\ncy.get('a.login').click(); //Realizando o cadastro\ncy.get('input#email_create').type(chance.email());\ncy.get('#SubmitCreate').click();\ncy.get('input#id_gender2').click();\ncy.get('input#customer_firstname').type(chance.first());\ncy.get('input#customer_lastname').type(chance.last());\ncy.get('input#passwd').type('Teste@123');\ncy.get('select#days').select('18', {\n  force: true\n});\ncy.get('select#months').select(chance.month(), {\n  force: true\n});\ncy.get('select#years').select(chance.year({\n  min: 1900,\n  max: 2021\n}), {\n  force: true\n});\ncy.get('input#company').type('Agilizei Bootcamp');\ncy.get('input#address1').type(chance.address());\ncy.get('input#city').type(chance.city());\ncy.get('select#id_state').select('California', {\n  force: true\n});\ncy.get('input#postcode').type(chance.zip());\ncy.get('input#phone_mobile').type(chance.phone());\ncy.get('input#alias').clear().type('Home'); //Concluir cadastro\ncy.get('button#submitAccount').click();\ncy.title().should('contain', 'My account');\ncy.log('Você realizou o cadastro com sucesso!');",
-              "err": {
-                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input#id_gender2`, but never found it.",
-                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `input#id_gender2`, but never found it.\n    at Context.eval (http://automationpractice.com/__cypress/tests?p=cypress/integration/cadastro.spec.js:2221:8)",
-                "diff": null
-              },
-              "uuid": "8ea25a91-3048-4bdf-a5f8-e6181ca9ef48",
-              "parentUUID": "8725eb00-2fcf-4b11-855d-394d42beff62",
+              "err": {},
+              "uuid": "d866ff19-19ab-43e8-9f13-72c10981f41d",
+              "parentUUID": "a2a6f2b7-80fc-477f-aabb-59a7c57f3dac",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "8ea25a91-3048-4bdf-a5f8-e6181ca9ef48"
+          "passes": [
+            "d866ff19-19ab-43e8-9f13-72c10981f41d"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 27956,
+          "duration": 17100,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

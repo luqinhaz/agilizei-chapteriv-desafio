@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 1,
+    "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2021-12-08T02:21:18.747Z",
-    "end": "2021-12-08T02:21:38.006Z",
-    "duration": 19259,
+    "failures": 1,
+    "start": "2021-12-08T12:01:47.052Z",
+    "end": "2021-12-08T12:02:11.636Z",
+    "duration": 24584,
     "testsRegistered": 1,
-    "passPercent": 100,
+    "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "16bed952-d492-418f-bd52-87667c52daa5",
+      "uuid": "2dce501e-4fce-4df2-ac31-da9b0ba0ad00",
       "title": "",
       "fullFile": "cypress/integration/cadastro.spec.js",
       "file": "cypress/integration/cadastro.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "187f5330-82fe-4f62-8d6f-80ae54c0ea10",
+          "uuid": "f80d919e-ba92-4979-981f-dda41f4ea157",
           "title": "Realziar o cadastro de novo usuário",
           "fullFile": "",
           "file": "",
@@ -38,29 +38,33 @@
               "title": "Quando eu preencher todos os dados obrigatórios, então devo ser cadastrado no sistema.",
               "fullTitle": "Realziar o cadastro de novo usuário Quando eu preencher todos os dados obrigatórios, então devo ser cadastrado no sistema.",
               "timedOut": null,
-              "duration": 19083,
-              "state": "passed",
-              "speed": "slow",
-              "pass": true,
-              "fail": false,
+              "duration": 24417,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
-              "code": "//Realizando o acesso ao site\ncy.visit('/', {\n  timeout: 30000\n}).title().should('eq', 'My Store'); //Clicando no botão de Sign In\ncy.get('a.login').click(); //Realizando o cadastro\ncy.get('input#email_create').type(chance.email());\ncy.get('#SubmitCreate').click();\ncy.get('input#id_gender2').click();\ncy.get('input#customer_firstname').type(chance.first());\ncy.get('input#customer_lastname').type(chance.last());\ncy.get('input#passwd').type('Teste@123');\ncy.get('select#days').select('18', {\n  force: true\n});\ncy.get('select#months').select(chance.month(), {\n  force: true\n});\ncy.get('select#years').select(chance.year({\n  min: 1900,\n  max: 2021\n}), {\n  force: true\n});\ncy.get('input#company').type('Agilizei Bootcamp');\ncy.get('input#address1').type(chance.address());\ncy.get('input#city').type(chance.city());\ncy.get('select#id_state').select('California', {\n  force: true\n});\ncy.get('input#postcode').type(chance.zip());\ncy.get('input#phone_mobile').type(chance.phone());\ncy.get('input#alias').clear().type('Home'); //Concluir cadastro\ncy.get('button#submitAccount').click();\ncy.title().should('contain', 'My account');\ncy.log('Você realizou o cadastro com sucesso!');",
-              "err": {},
-              "uuid": "1ea250f7-d3f2-44ef-ad86-c18c50fe7e14",
-              "parentUUID": "187f5330-82fe-4f62-8d6f-80ae54c0ea10",
+              "code": "//Realizando o acesso ao site\ncy.visit('/', {\n  timeout: 30000\n}).title().should('eq', 'My Store'); //Clicando no botão de Sign In\ncy.get('a.login').click(); //Realizando o cadastro\ncy.get('input#email_create').type(chance.email());\ncy.get('#SubmitCreate').click();\ncy.get('.page-heading').contains('CREATE AN ACCOUNT');\ncy.get('input#id_gender2').click();\ncy.get('input#customer_firstname').type(chance.first());\ncy.get('input#customer_lastname').type(chance.last());\ncy.get('input#passwd').type('Teste@123');\ncy.get('select#days').select('18', {\n  force: true\n});\ncy.get('select#months').select(chance.month(), {\n  force: true\n});\ncy.get('select#years').select(chance.year({\n  min: 1900,\n  max: 2021\n}), {\n  force: true\n});\ncy.get('input#company').type('Agilizei Bootcamp');\ncy.get('input#address1').type(chance.address());\ncy.get('input#city').type(chance.city());\ncy.get('select#id_state').select('California', {\n  force: true\n});\ncy.get('input#postcode').type(chance.zip());\ncy.get('input#phone_mobile').type(chance.phone());\ncy.get('input#alias').clear().type('Home'); //Concluir cadastro\ncy.get('button#submitAccount').click();\ncy.title().should('contain', 'My account');\ncy.log('Você realizou o cadastro com sucesso!');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'CREATE AN ACCOUNT' within the element: <h1.page-heading> but never did.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find content: 'CREATE AN ACCOUNT' within the element: <h1.page-heading> but never did.\n    at Context.eval (http://automationpractice.com/__cypress/tests?p=cypress/integration/cadastro.spec.js:2221:29)",
+                "diff": null
+              },
+              "uuid": "4086f1ef-9944-4bff-8ddf-f70f74c2b722",
+              "parentUUID": "f80d919e-ba92-4979-981f-dda41f4ea157",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [
-            "1ea250f7-d3f2-44ef-ad86-c18c50fe7e14"
+          "passes": [],
+          "failures": [
+            "4086f1ef-9944-4bff-8ddf-f70f74c2b722"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 19083,
+          "duration": 24417,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

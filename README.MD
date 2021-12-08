@@ -4,6 +4,7 @@
 https://user-images.githubusercontent.com/22923012/145126310-1514157d-548d-4f67-a3cf-aecd708fb432.mp4
 
 ## Relatórios
+https://luqinhaz.github.io/agilizei-chapteriv-desafio/
 
 
 ### Features

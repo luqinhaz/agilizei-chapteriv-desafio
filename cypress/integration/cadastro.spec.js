@@ -33,7 +33,8 @@ describe('Realziar o cadastro de novo usuário', () => {
         cy.get('select#id_state').select('California', { force: true })
         cy.get('input#postcode').type(chance.zip())
         cy.get('input#phone_mobile').type(chance.phone())
-        cy.get('input#alias').type('Home')
+        cy.get('input#alias').clear()
+            .type('Home')
         
         //Concluir cadastro
         cy.get('button#submitAccount').click()

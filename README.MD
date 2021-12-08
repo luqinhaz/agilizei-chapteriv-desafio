@@ -1,5 +1,7 @@
 # Desafio Bootcamp Agilizei - Chapter IV
 
+[![Execução dos Testes](https://github.com/luqinhaz/agilizei-chapteriv-desafio/actions/workflows/master.yml/badge.svg?branch=master)](https://github.com/luqinhaz/agilizei-chapteriv-desafio/actions/workflows/master.yml)
+
 ## Execução
 https://user-images.githubusercontent.com/22923012/145126310-1514157d-548d-4f67-a3cf-aecd708fb432.mp4
 

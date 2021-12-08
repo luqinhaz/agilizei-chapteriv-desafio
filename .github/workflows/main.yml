@@ -1,0 +1,46 @@
+name: Configuração e Execução dos Testes
+
+# Gatilhos
+  # Podem ser gatilhos programados por TEMPO
+  # Ou acionados sempre que acontecer um EVENTO
+  
+#Acionamento por EVENTO
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    # Máquina ou ambiente que vai rodar nossos testes
+    runs-on: ubuntu-latest
+
+    # Passos
+    steps:
+    
+    # Download do código
+    - uses: actions/checkout@v2
+    
+    # Setup da versão do node
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14.x
+        
+    # Comandos de execução
+    - run: npm install
+    
+    - run: npm run cy:run
+      continue-on-error: true
+      
+    - run: npm run report:merge
+    
+    - run: npm run report:mocha
+
+# GitHub Pages -> Publicar relatórios
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.7
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: mochawesome-report
